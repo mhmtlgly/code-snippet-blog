@@ -40,6 +40,16 @@ export const singleBlogPostQuery = graphql`
   }
 `
 
+const fixHeadings = (text: String) => {
+  return text
+    .toLowerCase()
+    .replace(/ /g, "-")
+    .replace(/\//g, "%2F")
+    .replace(/\#/g, "%23")
+    .replace(/\:/g, "%3A")
+    .replace(/\&/g, "%26")
+}
+
 const singleBlogpost = ({ data }) => {
   const theme = useTheme()
   const classes = useStyles()
@@ -94,15 +104,7 @@ const singleBlogpost = ({ data }) => {
                   (heading, index) => {
                     return (
                       <li key={heading.value}>
-                        <a
-                          href={`#${heading.value
-                            .toLowerCase()
-                            .replace(/ /g, "-")
-                            .replace(/\//g, "%2F")
-                            .replace(/\#/g, "%23")
-                            .replace(/\:/g, "%3A")
-                            .replace(/\&/g, "%26")}`}
-                        >
+                        <a href={`#${fixHeadings(heading.value)}`}>
                           {`${index + 1}. ${heading.value}`}
                         </a>
                       </li>
