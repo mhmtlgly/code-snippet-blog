@@ -2,7 +2,7 @@ import * as React from "react"
 import { Fragment } from "react"
 import { graphql, Link } from "gatsby"
 import { createStyles, Tooltip, useMediaQuery } from "@material-ui/core"
-import { makeStyles } from "@material-ui/core/styles"
+import { makeStyles, useTheme } from "@material-ui/core/styles"
 
 import { Layout, CodeSnippet } from "../components"
 
@@ -41,8 +41,9 @@ export const singleBlogPostQuery = graphql`
 `
 
 const singleBlogpost = ({ data }) => {
+  const theme = useTheme()
   const classes = useStyles()
-  const screenSizeMd = useMediaQuery(theme => theme.breakpoints.down("sm"))
+  const screenSizeMd = useMediaQuery(theme.breakpoints.down("sm"))
   console.log(screenSizeMd)
   return (
     <Layout>
