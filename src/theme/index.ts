@@ -42,9 +42,7 @@ export const theme = createMuiTheme({
         },
         ul: { padding: 0 },
         li: { listStyle: "none" },
-        img: {
-          maxWidth: "100%",
-        },
+
         "div.code-toolbar": {
           maxHeight: 500,
           overflow: "auto",
