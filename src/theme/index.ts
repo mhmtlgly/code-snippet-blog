@@ -14,7 +14,7 @@ export const theme = createMuiTheme({
           // padding: 0,
           // fontSize: 18,
         },
-        html: { minHeight: "100%" },
+        html: { minHeight: "100%", scrollBehavior: "smooth" },
         "body, #___gatsby, #gatsby-focus-wrapper": { minHeight: "100vh" },
         body: {
           // fontFamily: "MuseoModerno",

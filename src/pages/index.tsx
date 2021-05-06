@@ -14,6 +14,7 @@ const IndexPage = () => {
           categoryTypeTitle
           category {
             categoryTitle
+            categorySlug
             categoryIcon {
               contentful_id
               file {
@@ -46,18 +47,22 @@ const IndexPage = () => {
               <h2>{node.categoryTypeTitle}</h2>
               <div style={{ display: "flex", gap: 10, overflowX: "auto" }}>
                 {node.category?.map(category => (
-                  <img
+                  <Link
+                    to={`category/${category.categorySlug}`}
                     key={category.categoryIcon.contentful_id}
-                    src={category.categoryIcon.file.url}
-                    style={{
-                      height: 75,
-                      width: 75,
-                      boxShadow: "0 0 10px #0000004d",
-                      padding: 10,
-                      objectFit: "contain",
-                    }}
-                    alt=""
-                  />
+                  >
+                    <img
+                      src={category.categoryIcon.file.url}
+                      style={{
+                        height: 75,
+                        width: 75,
+                        boxShadow: "0 0 10px #0000004d",
+                        padding: 10,
+                        objectFit: "contain",
+                      }}
+                      alt={`category/${category.categorySlug}`}
+                    />
+                  </Link>
                 ))}
               </div>
             </div>
