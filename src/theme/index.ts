@@ -35,7 +35,6 @@ export const theme = createMuiTheme({
         a: {
           color: "black",
           // textDecoration: "none",
-          display: "flex",
         },
         p: {
           color: "black",

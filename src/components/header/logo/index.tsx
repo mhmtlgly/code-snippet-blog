@@ -1,21 +1,17 @@
 import React from "react"
 import { Box } from "@material-ui/core"
-import { Link } from "gatsby"
+import { Link, GatsbyLinkProps } from "gatsby"
 import { useLogoStyles } from "./styles"
+import { GoLinkExternal } from "react-icons/go"
 
-export const Logo = props => {
-  const { fill = "#744C9E" } = props
+interface LogoProps {
+  fill?: string
+}
+
+export const Logo = ({ fill = "#744C9E", ...props }: LogoProps) => {
   const classes = useLogoStyles(props)
   return (
-    <Box
-      className={classes.root}
-      component={Link}
-      // activeStyle={{ color: "green" }}
-      display="flex"
-      color="white"
-      to="/"
-      {...props}
-    >
+    <Link className={classes.root} to="/" {...props}>
       <svg
         width="56px"
         height="56px"
@@ -32,6 +28,6 @@ export const Logo = props => {
           ></path>
         </g>
       </svg>
-    </Box>
+    </Link>
   )
 }

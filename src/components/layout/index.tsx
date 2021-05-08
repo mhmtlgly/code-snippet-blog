@@ -8,6 +8,7 @@ const useStyles = makeStyles(theme => {
       height: "100vh",
       display: "grid",
       gridTemplateRows: "auto 1fr auto",
+      // gridTemplateRows: "1fr",
       gridTemplateColumns: "100%",
     },
   }

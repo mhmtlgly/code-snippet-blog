@@ -2,6 +2,7 @@ import { makeStyles } from "@material-ui/core/styles"
 
 export const useDrawerStyles = makeStyles(theme => ({
   root: {
+    "& a:first-of-type": { margin: "0 auto" },
     "& .MuiDrawer-paper": {
       padding: "20px 0",
       minWidth: 300,

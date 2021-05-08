@@ -24,22 +24,40 @@ import {
   RiPriceTag3Line,
 } from "react-icons/ri"
 
-import { AiOutlineMail } from "react-icons/ai"
-import { HiOutlineUserAdd, HiOutlineUserGroup } from "react-icons/hi"
+import {
+  AiOutlineMail,
+  AiOutlineProfile,
+  AiOutlineExperiment,
+  AiOutlineUser,
+} from "react-icons/ai"
+import {
+  HiOutlineUserAdd,
+  HiOutlineUserGroup,
+  HiOutlinePresentationChartBar,
+  HiOutlineCode,
+} from "react-icons/hi"
+import { CgProfile } from "react-icons/cg"
 
 export const mainNavigationLinks = [
+  {
+    id: 5,
+    name: "projects",
+    icon: <HiOutlineCode />,
+    link: "/projects",
+  },
+  {
+    id: 3,
+    name: "about",
+    icon: <AiOutlineUser />,
+    link: "/about",
+  },
   {
     id: 2,
     name: "blog",
     icon: <RiBallPenLine />,
     link: "/blog",
   },
-  {
-    id: 3,
-    name: "about",
-    icon: <RiCommunityLine />,
-    link: "/about",
-  },
+
   {
     id: 4,
     name: "contact",

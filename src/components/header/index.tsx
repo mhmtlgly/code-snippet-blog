@@ -24,7 +24,7 @@ export const Header = props => {
   return (
     <AppBar className={classes.root} position="relative" {...props}>
       <Toolbar>
-        <Logo fill="white" />
+        <Logo />
         <IconButton onClick={() => setIsDrawerOpen(true)}>
           <RiMenu3Line />
         </IconButton>
@@ -34,12 +34,7 @@ export const Header = props => {
         onOpen={() => setIsDrawerOpen(true)}
         onClose={() => setIsDrawerOpen(false)}
       >
-        <Logo
-          color={theme.palette.primary.main}
-          fontSize={25}
-          fontWeight={600}
-          mx="auto"
-        />
+        <Logo />
         <MainNavigation />
       </Drawer>
     </AppBar>
