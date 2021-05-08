@@ -38,6 +38,15 @@ module.exports = {
     },
     `gatsby-plugin-gatsby-cloud`,
     {
+      resolve: `gatsby-plugin-material-ui`,
+      options: {
+        stylesProvider: {
+          injectFirst: true,
+        },
+      },
+    },
+    `gatsby-plugin-styled-components`,
+    {
       resolve: `gatsby-source-contentful`,
       options: {
         spaceId: `yk3b45oc3mc3`,

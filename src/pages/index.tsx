@@ -6,7 +6,6 @@ import { makeStyles, useTheme } from "@material-ui/core/styles"
 import { Layout } from "../components"
 
 const useStyles = makeStyles(theme => ({
-  root: {},
   categoryWrapper: {
     display: "grid",
     gridTemplateColumns: "repeat(auto-fit, 75px)",
@@ -14,7 +13,12 @@ const useStyles = makeStyles(theme => ({
     gap: 10,
     // overflowX: "auto",
     padding: "10px 0",
-    "& a": { padding: 10, "&:hover": { transform: "scale(1.1)" } },
+    "& a": {
+      padding: 10,
+      "&:hover": {
+        transform: "scale(1.1)",
+      },
+    },
   },
   img: {
     height: 75,
@@ -25,41 +29,33 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const IndexPage = () => {
-  const classes = useStyles()
-  const data = useStaticQuery(graphql`
-    query IndexPageCategoryTypeQuery {
-      allContentfulCategoryType(
-        sort: { order: ASC, fields: categoryTypeSlug }
-      ) {
-        nodes {
-          categoryTypeTitle
-          category {
-            categoryTitle
-            categorySlug
-            categoryIcon {
-              contentful_id
-              file {
-                url
-              }
+export const query = graphql`
+  query IndexPageCategoryTypeQuery {
+    allContentfulCategoryType(sort: { order: ASC, fields: categoryTypeSlug }) {
+      nodes {
+        categoryTypeTitle
+        category {
+          categoryTitle
+          categorySlug
+          categoryIcon {
+            contentful_id
+            file {
+              url
             }
           }
         }
       }
     }
-  `)
+  }
+`
+
+const IndexPage = ({ data }) => {
+  const classes = useStyles()
 
   return (
     <Layout>
-      {/* <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(265px,1fr))",
-        }}
-      > */}
       {data.allContentfulCategoryType.nodes
         .filter(node => {
-          console.log(node)
           return node.categoryTypeTitle !== "Miscellaneous"
         })
         .map(node => {
@@ -90,7 +86,6 @@ const IndexPage = () => {
             </div>
           )
         })}
-      {/* </div> */}
     </Layout>
   )
 }
