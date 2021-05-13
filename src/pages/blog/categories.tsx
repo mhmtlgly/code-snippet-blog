@@ -2,7 +2,7 @@ import * as React from "react"
 import { Fragment, useEffect } from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 
-import { Layout, CodeSnippet } from "../components"
+import { Layout, CodeSnippet } from "../../components"
 
 const CategoriesPage = () => {
   const data = useStaticQuery(graphql`
@@ -32,7 +32,7 @@ const CategoriesPage = () => {
         {data.allContentfulCategory.nodes.map(category => (
           <Link
             key={category.categorySlug}
-            to={`/category/${category.categorySlug}`}
+            to={`/blog/category/${category.categorySlug}`}
             style={{
               display: "flex",
               alignItems: "center",

@@ -38,7 +38,7 @@ exports.createPages = async ({
 
   result.data.allContentfulCategory.nodes.forEach(node => {
     createPage({
-      path: `/category/${node.categorySlug}`,
+      path: `/blog/category/${node.categorySlug}`,
       component: require.resolve("./src/templates/singleCategory.tsx"),
       context: {
         slug: node.categorySlug,

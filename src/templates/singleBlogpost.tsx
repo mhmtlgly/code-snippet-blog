@@ -54,7 +54,7 @@ const singleBlogpost = ({ data }) => {
   const theme = useTheme()
   const classes = useStyles()
   const screenSizeMd = useMediaQuery(theme.breakpoints.down("sm"))
-  console.log(screenSizeMd)
+
   return (
     <Layout>
       <article style={{ maxWidth: 800, margin: "auto" }}>
@@ -78,7 +78,7 @@ const singleBlogpost = ({ data }) => {
                 title={category.categoryTitle}
                 aria-label={category.categoryTitle}
               >
-                <Link to={`/category/${category.categorySlug}`}>
+                <Link to={`/blog/category/${category.categorySlug}`}>
                   <img
                     src={category.categoryIcon.file.url}
                     style={{ width: 35, height: 35 }}

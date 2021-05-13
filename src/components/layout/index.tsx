@@ -7,8 +7,8 @@ const useStyles = makeStyles(theme => {
     root: {
       height: "100vh",
       display: "grid",
-      gridTemplateRows: "auto 1fr",
-      // gridTemplateRows: "1fr",
+      // gridTemplateRows: "auto 1fr",
+      gridTemplateRows: "1fr",
       gridTemplateColumns: "100%",
     },
   }
@@ -17,10 +17,12 @@ const useStyles = makeStyles(theme => {
 export const Layout = ({ children }) => {
   const classes = useStyles()
   return (
-    <div className={classes.root}>
-      <Header />
-      <main>{children}</main>
-      <Footer />
-    </div>
+    // <div className={classes.root}>
+    /* <Header /> */
+    <main>{children}</main>
+    /* <Footer /> */
+    /* </div> */
   )
 }
+
+// http://localhost:8002/?skip-ssr=true

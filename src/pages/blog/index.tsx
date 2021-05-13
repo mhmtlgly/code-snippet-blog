@@ -3,7 +3,7 @@ import { Fragment, useEffect } from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import { Button } from "@material-ui/core"
 
-import { Layout, CodeSnippet } from "../components"
+import { Layout, CodeSnippet } from "../../components"
 
 const BlogPage = () => {
   const data = useStaticQuery(graphql`
@@ -51,16 +51,14 @@ const BlogPage = () => {
             key={node.codeSnippetTitle}
           >
             <h2>
-              <Link to={`/blog/${node.codeSnippetSlug}`}>
-                {node.codeSnippetTitle}
-              </Link>
+              <Link to={node.codeSnippetSlug}>{node.codeSnippetTitle}</Link>
             </h2>
             <div style={{ display: "flex", gap: 10, marginBottom: 15 }}>
               {node.codeSnippetCategory.map(category => {
                 return (
                   <Fragment key={category.categorySlug}>
                     <Link
-                      to={`/category/${category.categorySlug}`}
+                      to={`category/${category.categorySlug}`}
                       style={{
                         display: "flex",
                         alignItems: "center",
@@ -96,7 +94,7 @@ const BlogPage = () => {
                         return (
                           <li key={heading.value}>
                             <Link
-                              to={`/blog/${
+                              to={`${
                                 node.codeSnippetSlug
                               }#${heading.value
                                 .toLowerCase()

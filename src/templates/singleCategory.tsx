@@ -134,7 +134,7 @@ const singleCategory = ({ data, pageContext }) => {
                   {codesnippet.codeSnippetCategory.map(category => {
                     return (
                       <Link
-                        to={`/category/${category.categorySlug}`}
+                        to={`/blog/category/${category.categorySlug}`}
                         key={category.categorySlug}
                       >
                         <img

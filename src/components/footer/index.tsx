@@ -25,9 +25,12 @@ export const Footer = props => {
       className={classes.root}
       p={{ xs: 0.5, sm: 2 }}
       bgcolor="rgb(0 0 0 / 5%)"
+      mt={5}
     >
       <p>This Website is powered by: </p>
-      <div style={{ display: "flex", gap: 10, marginBottom: 10 }}>
+      <div
+        style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: 10 }}
+      >
         <img src={reactLogo} style={{ width: 50, height: 50 }} alt="" />
         <img src={reduxLogo} style={{ width: 50, height: 50 }} alt="" />
         <img src={gatsbyLogo} style={{ width: 50, height: 50 }} alt="" />

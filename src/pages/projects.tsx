@@ -1,9 +1,15 @@
 import * as React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
-import { Button, Typography } from "@material-ui/core"
+import {
+  Button,
+  Typography,
+  Tooltip,
+  IconButton,
+  Divider,
+} from "@material-ui/core"
 import { AiOutlineGithub } from "react-icons/ai"
 import { GoLinkExternal } from "react-icons/go"
-import { HiOutlinePencilAlt } from "react-icons/hi"
+import { HiOutlinePencilAlt, HiOutlineCode } from "react-icons/hi"
 import { makeStyles, useTheme } from "@material-ui/core/styles"
 
 import { Layout } from "../components"
@@ -83,19 +89,32 @@ const ProjectsPage = ({ data }) => {
               <Link to={`/blog/${node.projectSlug}`}>
                 <h2>{node.projectTitle}</h2>
               </Link>
-              <div className={classes.iconWrapper}>
+              <div>
                 {node.projectCategory.map(category => {
                   return (
-                    <Link
+                    <Tooltip
                       key={category.id}
-                      to={`/category/${category.categorySlug}`}
+                      arrow
+                      title={category.categoryTitle}
                     >
-                      <img
-                        key={category.id}
-                        src={category.categoryIcon.file.url}
-                        alt=""
-                      />
-                    </Link>
+                      <IconButton>
+                        <Link
+                          key={category.id}
+                          to={`/blog/category/${category.categorySlug}`}
+                          style={{ display: "flex" }}
+                        >
+                          <img
+                            src={category.categoryIcon.file.url}
+                            style={{
+                              height: 35,
+                              width: 35,
+                              objectFit: "contain",
+                            }}
+                            alt=""
+                          />
+                        </Link>
+                      </IconButton>
+                    </Tooltip>
                   )
                 })}
               </div>
@@ -120,16 +139,16 @@ const ProjectsPage = ({ data }) => {
                   // color="primary"
                   endIcon={<GoLinkExternal />}
                 >
-                  Live Demo
+                  Demo
                 </Button>
                 <Button
                   component={Link}
                   to={`/blog/${node.projectSlug}`}
                   variant="outlined"
                   // color="primary"
-                  endIcon={<HiOutlinePencilAlt />}
+                  endIcon={<HiOutlineCode />}
                 >
-                  Blog Post (Tutorial)
+                  Code
                 </Button>
               </div>
             </div>

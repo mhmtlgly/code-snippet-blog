@@ -24,31 +24,15 @@ export const theme = createMuiTheme({
         //   display: "grid",
         //   gridTemplateRows: "1fr",
         // },
-        h1: {
-          lineHeight: 2,
-          color: gatsbyLila,
-        },
-        h2: {
-          // lineHeight: 2,
-          color: "#000",
-        },
-        a: {
-          color: "black",
-          // textDecoration: "none",
-        },
-        p: {
-          color: "black",
-        },
         ul: { padding: 0 },
         li: { listStyle: "none" },
-
         "div.code-toolbar": {
           maxHeight: 500,
           overflow: "auto",
         },
         "div.code-toolbar > .toolbar": {
           opacity: 1,
-          top: 0,
+          top: 7,
           right: 0,
           "& .toolbar-item:nth-of-type(1)": {
             display: "none",
@@ -63,7 +47,7 @@ export const theme = createMuiTheme({
               cursor: "pointer",
               background: "#fafaaf",
               color: "initial",
-              padding: "0 10px",
+              padding: "10px",
               borderRadius: 0,
               "&:hover": {
                 background: "#afaf",
@@ -75,7 +59,7 @@ export const theme = createMuiTheme({
     },
   },
   palette: {
-    primary: { main: purple.A700 },
+    // primary: { main: purple.A700 },
     // secondary: { main: "#ffc400" },
   },
   spacing: 10,

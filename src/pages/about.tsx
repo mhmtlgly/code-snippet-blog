@@ -15,6 +15,7 @@ import {
   AccordionDetails,
   AccordionSummary,
   Typography,
+  Box,
 } from "@material-ui/core"
 import { makeStyles, Theme, createStyles } from "@material-ui/core/styles"
 import { AiOutlineGithub } from "react-icons/ai"
@@ -24,29 +25,39 @@ import { MdExpandMore, MdFace } from "react-icons/md"
 
 import { Layout } from "../components"
 
+// const useStyles = makeStyles((theme: Theme) =>
+//   createStyles({
+//     root: {
+//       maxWidth: 600,
+//       margin: "auto",
+//       "& svg": { height: 40, width: 40 },
+//     },
+//     media: {
+//       height: 0,
+//       paddingTop: "56.25%", // 16:9
+//     },
+//     expand: {
+//       transform: "rotate(0deg)",
+//       marginLeft: "auto",
+//       transition: theme.transitions.create("transform", {
+//         duration: theme.transitions.duration.shortest,
+//       }),
+//     },
+//     expandOpen: {
+//       transform: "rotate(180deg)",
+//     },
+//     avatar: {
+//       backgroundColor: "red",
+//     },
+//   })
+// )
+
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
-      maxWidth: 600,
-      margin: "auto",
-      "& svg": { height: 40, width: 40 },
-    },
-    media: {
-      height: 0,
-      paddingTop: "56.25%", // 16:9
-    },
-    expand: {
-      transform: "rotate(0deg)",
-      marginLeft: "auto",
-      transition: theme.transitions.create("transform", {
-        duration: theme.transitions.duration.shortest,
-      }),
-    },
-    expandOpen: {
-      transform: "rotate(180deg)",
-    },
-    avatar: {
-      backgroundColor: "red",
+      "& p": {
+        margin: 0,
+      },
     },
   })
 )
@@ -71,11 +82,83 @@ const AboutPage = () => {
 
   return (
     <Layout>
+      <h1>Lebenslauf</h1>
+      <Box className={classes.root} px={3}>
+        <h3>Meta Daten</h3>
+        <Box display="grid" gridTemplateColumns="auto 1fr" gridGap={10}>
+          <p>Name:</p>
+          <p>Mehmet Ali Gülay</p>
+          <p>Geburtstag:</p>
+          <p>09.04.1985</p>
+          <p>Geburtort:</p>
+          <p>Castrop-Rauxel</p>
+        </Box>
+        <h3>Sprachkenntnisse</h3>
+        <Box display="grid" gridTemplateColumns="auto 1fr" gridGap={10}>
+          <p>Deutsch:</p>
+          <p>Muttersprache</p>
+          <p>Türkisch:</p>
+          <p>Muttersprache</p>
+          <p>Englisch:</p>
+          <p>B2 - C1 Level</p>
+        </Box>
+        <h3>Schulbildung</h3>
+        <Box display="grid" gridTemplateColumns="auto 1fr" gridGap={10}>
+          <p>Höchster Schulabschluss:</p>
+          <p>Fachhochschulreife</p>
+        </Box>
+        <h3>Beruflicher Werdegang</h3>
+        <Box display="grid" gridTemplateColumns="auto 1fr" gridGap={10}>
+          <p>10/2004 – 01/2006</p>
+          <p>
+            IKEA Deutschland GmbH & Co. KG Ausbildung zum Kaufmann im
+            Einzelhandel (nicht abgeschlossen)
+          </p>
+          <p>06/2006 – 09/2007</p>
+          <p>Deutsche Proventus AG (Dienstleistungen als Finanzberater)</p>
+          <p>11/2007 – 03/2008</p>
+          <p>
+            Hundeshagen Personal-Service GmbH Call-Center-Agent bei arvato
+            direct services Dortmund GmbH (Kundenbetreuung o2)
+          </p>
+          <p>05/2008 – 06/2008</p>
+          <p>Wahl Personal-Service GmbH (Produktionshelfer)</p>
+          <p>12/2008 – 01/2009</p>
+          <p>
+            Hundeshagen Personal-Service GmbH Call-Center-Agent bei arvato
+            direct services Dortmund GmbH (Bestellannahme RTL-Shop)
+          </p>
+          <p>02/2009 – 08/2010</p>
+          <p>
+            TECTUM Customer Care Dortmund GmbH Call-Center-Agent
+            (Kundenbetreuung T-Mobile)
+          </p>
+          <p>10/2011 – 02/2012</p>
+          <p>
+            ZeitArbeit Creativ Bochum GmbH Produktionhelfer bei Solar Scheuten
+            GmbH
+          </p>
+          <p>09/2014 – 10/2014</p>
+          <p>Zeit Arbeit arcus.plan AG Kommissionierer bei DPD</p>
+          <p>10/2018 – 11/2018</p>
+          <p>Hans Stork Betriebs-GmbH Sandstrahler</p>
+          <h3>Anmerkung</h3>
+        </Box>
+        <Box display="grid" gridTemplateColumns="auto 1fr" gridGap={10}>
+          <p>
+            In den nicht aufgeführten Jahren war ich arbeitslos. 2 Monate nach
+            der Kündigung beim letzten Arbeitgeber habe ich im Januar 2019
+            angefangen mit der Hilfe von Online Tutorials HTML zu lernen.
+          </p>
+        </Box>
+      </Box>
+
       {/* <h1>ABOUT PAGE</h1> */}
-      <Card className={classes.root}>
+
+      {/* <Card className={classes.root}>
         <CardHeader
           avatar={<MdFace />}
-          title="About me"
+          // title="About me"
           subheader="Mehmet Ali Gülay"
         />
         <CardContent>
@@ -184,7 +267,7 @@ const AboutPage = () => {
             </AccordionDetails>
           </Accordion>
         </CardContent>
-      </Card>
+      </Card> */}
     </Layout>
   )
 }
