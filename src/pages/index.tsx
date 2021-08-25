@@ -68,7 +68,7 @@ const IndexPage = ({ data }) => {
       <Box className={classes.root}>
         <Box className={classes.inner}>
           <Box className={classes.imgContainer}></Box>
-          <h1>Mehmet Ali Gülay</h1>
+          <h1>mhmtlgly</h1>
 
           <h2>Self-Taught Frontend Developer</h2>
           <Box p={4}>
